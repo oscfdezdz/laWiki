@@ -1,0 +1,54 @@
+<div class="flex min-h-screen items-center justify-center bg-gray-100">
+  <div class="my-8 w-full max-w-md rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-8">
+    <div class="mb-4 flex items-center justify-between">
+      <h5 class="text-xl font-bold leading-none text-gray-900">
+        {{ "HISTORIAL_DE_VERSIONES" | translate }}
+      </h5>
+    </div>
+    <div class="flow-root">
+      @if (versiones.length === 0) {
+      <div class="py-4 text-center text-gray-500">
+        {{ "NO_VERSIONES_PARA_ENTRADA" | translate }}
+      </div>
+      } @else {
+      <ul role="list" class="divide-y divide-gray-200">
+        @for (version of versiones; track $index) {
+        <li class="py-3 sm:py-4">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <a [routerLink]="['/usuario/', version.idUsuario]">
+                <img class="w-8 h-8 rounded-full" [src]="version.profilePicture"/>
+              </a>
+            </div>
+            <div class="ms-4 min-w-0 flex-1">
+              <p class="truncate text-sm font-medium text-gray-900">
+                <a [routerLink]="['/usuario/', version.idUsuario]">
+                  {{ version.nombreUsuario }}
+                </a>
+              </p>
+              <p class="truncate text-sm text-gray-500">
+                {{ formatDate(version.fechaEdicion) }}
+              </p>
+            </div>
+            <div class="inline-flex items-center text-base font-semibold text-gray-900">
+              @if ($index === 0) {
+                <span class="text-sm font-semibold text-green-500">
+                  {{ "ACTUAL" | translate }}
+                </span>
+              } @else {
+                <button
+                  (click)="restaurarVersion(version)"
+                  class="ms-2 cursor-pointer rounded-lg border border-gray-200 bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600"
+                >
+                  {{ "RESTAURAR" | translate }}
+                </button>
+              }
+            </div>
+          </div>
+        </li>
+        }
+      </ul>
+      }
+    </div>
+  </div>
+</div>

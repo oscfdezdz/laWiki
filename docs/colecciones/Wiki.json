@@ -1,0 +1,16 @@
+[
+    {
+        "id": "0",
+        "imagen": "imagenes/ciencia",
+        "nombre": "Ciencia",
+        "descripción": "Wiki sobre temas científicos",
+        "fecha": "10/10/2020"
+    },
+    {
+        "id": "1",
+        "imagen": "imagenes/moda",
+        "nombre": "Moda",
+        "descripción": "Wiki sobre fashion",
+        "fecha": "13/09/2021"
+    }
+]

@@ -1,0 +1,46 @@
+<h1 class="p-4 text-center text-xl font-semibold">
+  {{ "LISTA_DE_ENTRADAS" | translate }} {{ nombre_wiki }}
+</h1>
+
+<div #imagen class="my-4 flex justify-center">
+  <img [src]="imagenUrl" [alt]="('IMAGEN_WIKI' | translate) + ' ' + nombre_wiki"
+    class="h-64 w-64 rounded-lg object-cover shadow-lg" />
+</div>
+
+<div class="filter-container flex justify-center">
+  <app-filter-entradas (filtroAplicado)="aplicarFiltro($event)" />
+</div>
+
+<div *ngIf="this.role === 'admin' || this.role === 'redactor'" class="crearEntrada-button mt-4 flex justify-end px-2">
+  <button (click)="crearEntrada()" class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+    {{ "CREAR_ENTRADA" | translate }}
+  </button>
+</div>
+
+<div class="wiki-list mt-4 flex max-w-full flex-col gap-5 rounded-lg bg-gray-50 p-5 shadow-lg">
+  <ul *ngIf="entradasFiltradas.length > 0; else sinResultados" class="w-full gap-5 space-y-4">
+    <li *ngFor="let entrada of entradasFiltradas"
+      class="flex w-full cursor-pointer flex-col justify-between gap-5 rounded-lg bg-white p-4 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:transform hover:bg-blue-50 hover:shadow-xl sm:flex-row">
+      <div (click)="handleEntradaClick(entrada.id)" class="flex-grow cursor-pointer">
+        <h2 class="text-xl font-semibold text-gray-800">
+          {{ entrada.nombre }}
+        </h2>
+        <p>{{ entrada.nombreUsuario }}</p>
+        <p>
+          {{ "FECHA_DE_CREACION_FORMAT" | translate }}
+          {{ formatearFecha(entrada.fechaCreacion) }}
+        </p>
+      </div>
+      <button *ngIf="this.role ==='admin'||this.role==='editor'" (click)="borrarEntrada(entrada.id)"
+        class="w-[150px] rounded bg-red-300 px-4 py-1 text-white hover:bg-red-600" style="height: min-content">
+        {{ "BORRAR" | translate }}
+      </button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #sinResultados>
+  <h2 class="text-center text-gray-500">{{ "NO_RESULTADOS" | translate }}</h2>
+</ng-template>
+
+<app-boton-atras></app-boton-atras>

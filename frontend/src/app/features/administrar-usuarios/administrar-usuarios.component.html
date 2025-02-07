@@ -1,0 +1,83 @@
+<div class="flex min-h-screen items-center justify-center bg-gray-100">
+  <div class="my-8 w-full max-w-xl rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-8">
+    <div class="mb-4 flex items-center justify-between">
+      <h5 class="text-xl font-bold leading-none text-gray-900">
+        {{ "ADMINISTRAR_USUARIOS" | translate }}
+      </h5>
+    </div>
+    <div class="flow-root">
+      @if (usuarios.length === 0) {
+      <div class="py-4 text-center text-gray-500">
+        {{ "CARGANDO_USUARIOS" | translate }}
+      </div>
+      } @else {
+      <ul role="list" class="divide-y divide-gray-200">
+        @for (usuario of usuarios; track $index) {
+        @if (usuario.googleId !== user.id) {
+        <li class="py-3 sm:py-4">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <a [routerLink]="['/usuario/', usuario.googleId]">
+                <img class="w-8 h-8 rounded-full" [src]="usuario.profile_picture"/>
+              </a>
+            </div>
+            <div class="ms-4 min-w-0 flex-1">
+              <p class="truncate text-sm font-medium text-gray-900">
+                <a [routerLink]="['/usuario/', usuario.googleId]">
+                  {{ usuario.name }}
+                </a>
+              </p>
+              <p class="truncate text-sm text-gray-500">
+                {{ usuario.email }}
+              </p>
+            </div>  
+            
+            <!-- <div class="inline-flex items-center text-base font-semibold text-gray-900"> -->
+            <div class="relative inline-block text-left overflow-visible">
+              <button (click)="onClickDropdown($index)" [attr.data-dropdown-toggle]="'dropdown'+$index" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"  data-dropdown-placement="top" type="button">
+                {{ usuario.role | translate }}
+                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </button>
+                
+              <!-- Dropdown menu -->
+              <div [id]="'dropdown'+$index" class="z-50 hidden absolute left-0 top-full bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                  <ul class="py-2 text-sm text-gray-700">
+                    <li [hidden]="usuario.role === 'admin'">
+                      <button (click)="onClickRol(usuario, 'admin')" class="block px-4 py-2 hover:bg-gray-100 ">
+                        {{ "admin" | translate }}
+                      </button>
+                    </li>
+                    <li [hidden]="usuario.role === 'editor'">
+                      <button (click)="onClickRol(usuario, 'editor')" class="block px-4 py-2 hover:bg-gray-100 ">
+                        {{ "editor" | translate }}
+                      </button>
+                    </li>
+                    <li [hidden]="usuario.role === 'redactor'">
+                      <button (click)="onClickRol(usuario, 'redactor')" class="block px-4 py-2 hover:bg-gray-100 ">
+                        {{ "redactor" | translate }}
+                      </button>
+                    </li>
+                    <li [hidden]="usuario.role === 'lector'">
+                      <button (click)="onClickRol(usuario, 'lector')" class="block px-4 py-2 hover:bg-gray-100 ">
+                        {{ "lector" | translate }}
+                      </button>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+            <button 
+              (click)="onClickBorrar(usuario.googleId)"
+              class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center ms-3">
+              {{ "BORRAR" | translate }}
+            </button>
+          </div>
+        </li>
+        }
+        }
+      </ul>
+      }
+    </div>
+  </div>
+</div>

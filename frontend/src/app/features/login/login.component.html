@@ -1,0 +1,24 @@
+<div class="bg-gray-100 min-h-screen flex items-center justify-center content-center">
+  <div class="bg-white w-[350px] rounded-lg">
+    <img class="mx-auto w-16 h-16 mb-2 mt-5" src="faviconCircular.ico" alt="">
+    <div class="header text-center">
+      <h1 class="text-2xl font-bold">{{ "BIENVENIDA_LAWIKI" | translate }}</h1>
+    </div>
+    <div class="content p-6 space-y-4">
+      <button type="button" class="w-full bg-black rounded-lg py-2" (click)="login()">
+        <span class="flex items-center justify-center text-white">
+          <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google"
+            class="w-7 h-7 align-sub mr-1" />
+          {{ "INICIAR_SESION_GOOGLE" | translate }}
+        </span>
+      </button>
+
+      <button type="button" class="w-full rounded-lg py-2 bg-transparent border border-black" (click)="loginInvitado()">
+        {{ "CONTINUAR_COMO_INVITADO" | translate }}
+      </button>
+
+      <p class="text-center text-sm text-gray-500">{{ "TERMINOS_CONDICIONES" | translate }}</p>
+
+    </div>
+  </div>
+</div>

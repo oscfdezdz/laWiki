@@ -1,0 +1,56 @@
+<div class="mx-auto mt-8 max-w-4xl rounded-lg bg-white p-6 shadow-md">
+  <h1 class="mb-6 text-center text-3xl font-semibold text-gray-800">
+    {{ "PERFIL" | translate }}
+  </h1>
+
+  <div class="mb-6 flex items-center justify-center">
+    <img *ngIf="user?.profilePicture" [src]="user?.profilePicture" class="rounded-full" />
+    <div *ngIf="!user?.profilePicture"
+      class="flex h-24 w-24 items-center justify-center rounded-full bg-blue-500 text-3xl font-bold text-white">
+      {{ user?.name?.charAt(0)?.toUpperCase() }}
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <div class="flex items-center justify-between">
+      <span class="text-lg font-medium text-gray-600">{{
+        "NOMBRE" | translate
+        }}</span>
+      <span class="text-lg text-gray-800">{{ user?.name }}</span>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <span class="text-lg font-medium text-gray-600">{{
+        "EMAIL" | translate
+        }}</span>
+      <span class="text-lg text-gray-800">{{ user?.email }}</span>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <span class="text-lg font-medium text-gray-600">{{
+        "ROL" | translate
+        }}</span>
+      <span class="text-lg text-gray-800">{{ (user?.role || '') | translate }}</span>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <span class="text-lg font-medium text-gray-600">{{
+        "NOTIFICACIONES_EMAIL" | translate
+        }}</span>
+      <label class="relative inline-flex cursor-pointer items-center">
+        <input type="checkbox"
+               class="peer sr-only"
+               [ngModel]="user?.wantsEmailNotifications"
+               (change)="toggleNotificaciones()">
+        <div class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300"></div>
+      </label>
+    </div>
+  </div>
+
+  <div class="mt-8 flex justify-center space-x-4">
+    <button class="rounded-md bg-green-600 px-6 py-2 text-white transition duration-200 hover:bg-green-700"
+      [routerLink]="['/usuario', idUsuario]">
+      {{ "MIS_VALORACIONES" | translate }}
+    </button>
+  </div>
+</div>

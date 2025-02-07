@@ -1,0 +1,3465 @@
+{
+    "elements": [
+        {
+            "attributes": {
+                "name": "Entrada",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 940,
+                        "y": 530
+                    },
+                    "size": {
+                        "height": 160,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "0d07345b-caf5-4012-a90f-b0a84a1a0665",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "laWiki",
+                "landmark": true,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 280,
+                        "y": 140
+                    },
+                    "size": {
+                        "height": 300,
+                        "width": 420
+                    }
+                }
+            },
+            "id": "47f39a25-b28c-4f70-bb08-a5ed32d027f5",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Volver"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 930,
+                        "y": 560
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "7ad51eb5-12a5-4187-ac45-696418b6fe7b",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Comentar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 930,
+                        "y": 600
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "fce39ecf-5a23-4fff-954e-54823c39870b",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Entrada",
+                "stereotype": "details",
+                "fields": [
+                    "descripción",
+                    "fecha",
+                    "html",
+                    "imagen",
+                    "nombre"
+                ],
+                "collection": "Entrada"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 960,
+                        "y": 590
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "b6b18b05-2bb2-4b87-8089-af706821eb02",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Buscar wiki",
+                "stereotype": "form",
+                "fields": [
+                    "búsqueda"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 380,
+                        "y": 180
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 220
+                    }
+                }
+            },
+            "id": "06cee925-5589-45a9-9ebf-741888a8dec7",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Lista de wikis",
+                "stereotype": "list",
+                "fields": [
+                    "autor",
+                    "descripción",
+                    "editor",
+                    "fecha"
+                ],
+                "collection": "Wiki",
+                "filters": [
+                    "fecha",
+                    "nombre"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 370,
+                        "y": 300
+                    },
+                    "size": {
+                        "height": 100,
+                        "width": 220
+                    }
+                }
+            },
+            "id": "componentelistabusqueda",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Editar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1100,
+                        "y": 610
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "fae74bdd-a6e2-4fa5-a7bd-e46b8cb908c5",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "buscar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 440,
+                        "y": 230
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "592b8a0e-e0b6-424c-a8a3-06be6cffdb4f",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "selected",
+                "stereotype": "selection"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 580,
+                        "y": 380
+                    },
+                    "name": {
+                        "horizontal": "right",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "62da8e90-bce0-43a2-98e3-3a1ddc1710af",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Sesión iniciada con Google (oauth)",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 90,
+                        "y": 250
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "aaac5227-3790-4214-a15a-e0de7f603f8e",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 155,
+                        "y": 250
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "a9754f33-41c3-4fe7-88aa-2d138704a488",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Crear wiki"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 360,
+                        "y": 130
+                    },
+                    "name": {
+                        "horizontal": "right-outer",
+                        "vertical": "middle"
+                    }
+                }
+            },
+            "id": "86388822-23bb-4b67-af8b-64c4ad18f51e",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "entrada borrada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 950,
+                        "y": 340
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "bc26bb1e-5418-4736-a4f0-76a0693c462f",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": "entrada actualizada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1260,
+                        "y": 770
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "44657590-89ce-475c-9cbe-f35a1e792df0",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": "Editar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 380,
+                        "y": 390
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "5412c489-5e92-49da-98ca-9145ca47cfd9",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Editor wiki",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 230,
+                        "y": 640
+                    },
+                    "size": {
+                        "height": 160,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "cda47c86-c327-4eb6-8b1b-628791d556f6",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Volver"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 300,
+                        "y": 790
+                    },
+                    "name": {
+                        "horizontal": "middle",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "16782458-55cf-4351-a57f-1c31de0a12fe",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Guardar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 350,
+                        "y": 790
+                    },
+                    "name": {
+                        "horizontal": "middle",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "a7a59a4f-7d10-45c4-b3ed-58c115a6a086",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Editar wiki",
+                "stereotype": "form",
+                "fields": [
+                    "descripción",
+                    "fecha",
+                    "imagen",
+                    "nombre"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 260,
+                        "y": 690
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "88aeb218-c9b0-4d94-8e81-0cba808fc3db",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Borrar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 500,
+                        "y": 390
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "0021d27b-07a4-42ff-aeb2-efe3a5cbc7e5",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "wiki borrada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 530,
+                        "y": 560
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 100
+                    }
+                }
+            },
+            "id": "99c49015-e57d-4ec1-b97b-6816d8f6ab94",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 570,
+                        "y": 550
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "e9aa13f5-5f6b-4140-bfa1-71d0c8ac91d0",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Wiki actualizada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 430,
+                        "y": 820
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "04391716-9cb6-4390-b1a9-071441d033d3",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 450,
+                        "y": 810
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "ff2ee7f8-7d35-4a01-a716-1fe462b0d571",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Wiki",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 910,
+                        "y": 40
+                    },
+                    "size": {
+                        "height": 230,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "702526c0-ecb6-4548-aea7-2ad53f7de2df",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Crear entrada"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1100,
+                        "y": 90
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "8cca6c83-d7d5-4fda-b3b9-374ec2b9263f",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Búsqueda entrada",
+                "stereotype": "form",
+                "fields": [
+                    "Fecha creación",
+                    "Nombre",
+                    "Usuario"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 940,
+                        "y": 90
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "2d4575e6-8f7d-46a0-917a-b8cfc150340c",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Lista de Entradas",
+                "stereotype": "list",
+                "fields": [
+                    "fecha",
+                    "imagen",
+                    "nombre",
+                    "redactor"
+                ],
+                "collection": "Entrada",
+                "filters": [
+                    "fecha",
+                    "nombre",
+                    "usuario"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 940,
+                        "y": 180
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "60d8f224-2aa2-4137-8283-a3b8e7b103d1",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "selected",
+                "stereotype": "selection"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1080,
+                        "y": 230
+                    },
+                    "name": {
+                        "horizontal": "right",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "fa843d4f-4dee-48e1-9400-1bd85784cb8f",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "borrar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 950,
+                        "y": 230
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "79d25a42-0d03-4e59-ab01-f582baa0d70f",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Editar entrada",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1230,
+                        "y": 560
+                    },
+                    "size": {
+                        "height": 160,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "072bb547-e45f-4762-b7ab-17e122b698ec",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "cancelar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1400,
+                        "y": 710
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "339c06d0-a529-46bb-885b-8c0cf820a961",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "buscar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1000,
+                        "y": 140
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "4690e409-0107-4b2c-b76e-4ee617afaf27",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Volver"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 900,
+                        "y": 180
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "7579433e-e603-4772-8265-31242685cd86",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 990,
+                        "y": 330
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "c11ca205-730c-4dbe-b2b3-4a21bcb77dad",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Historial de versiones"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1030,
+                        "y": 680
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "8bb450a6-018e-4445-9c70-2f6978bd302e",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1250,
+                        "y": 770
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "dca5192c-3030-46eb-a806-978eee9fdb79",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Editar entrada",
+                "stereotype": "form",
+                "fields": [
+                    "descripción",
+                    "fecha",
+                    "html",
+                    "imagen",
+                    "nombre"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1260,
+                        "y": 600
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "ebd3caab-ee60-4c69-9cfe-31a09a181cef",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "actualizar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1290,
+                        "y": 650
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "af45bef7-5c97-4194-9409-d6f26a73b3d3",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "edición de entrada cancelada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1370,
+                        "y": 810
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "d032617e-f265-4b7e-93a2-dd06a395439c",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1400,
+                        "y": 850
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "a6acd1b7-a52c-4667-94e8-af4fb96a17eb",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Crear Entrada",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1220,
+                        "y": 40
+                    },
+                    "size": {
+                        "height": 160,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "8922798d-75f9-4f34-8adf-b3eacbcb4a76",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Crear entrada",
+                "stereotype": "form",
+                "fields": [
+                    "descripción",
+                    "fecha",
+                    "imagen",
+                    "nombre"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1250,
+                        "y": 80
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "90310a14-422f-4e82-8c37-201d3a17e0b8",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Crear"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1260,
+                        "y": 130
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "1251f197-e502-48a6-9360-29c8ba786428",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Cancelar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1360,
+                        "y": 130
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "e8c84ac2-096b-4334-9e5d-4cf5913b039c",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "entrada creada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1170,
+                        "y": 230
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "9f8322d6-3dc0-4b69-ac3b-6a232da2ba34",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1160,
+                        "y": 230
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "e3d4dbf7-1c9c-47d5-9630-c773da62cc07",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Historial",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1080,
+                        "y": 950
+                    },
+                    "size": {
+                        "height": 160,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "25c5f7e3-6118-40e3-8eff-2a8a3c1748b5",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Ver historial entrada",
+                "stereotype": "list",
+                "fields": [
+                    "fecha_modificación",
+                    "redactor"
+                ],
+                "collection": "historial",
+                "filters": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1100,
+                        "y": 1000
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "4f59ca29-4f73-47c3-b0f0-f7baf7d7fa67",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Volver"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1070,
+                        "y": 1080
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "f5a3b047-afde-4ec9-8478-cb95fc65d031",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "selected",
+                "stereotype": "selection"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1240,
+                        "y": 1050
+                    },
+                    "name": {
+                        "horizontal": "right",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "4dfde35f-de60-44f6-a8c4-2ede826994cf",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "valorar redactor"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1240,
+                        "y": 1000
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "041198cf-908c-4ca4-ae92-5a313d7efab2",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "revertir"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1100,
+                        "y": 1050
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "d065ff8f-1e77-4fb6-95ac-eacf6b9f3640",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Entrada actualizada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1000,
+                        "y": 1150
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "416c1594-8a34-433a-8126-65d6bf0fc8cf",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 990,
+                        "y": 1150
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "432bb4aa-9608-4af4-b213-4ede36adfd1b",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Redactor valorado",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1280,
+                        "y": 1160
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "f8e7a61b-89dc-4b02-9eab-e5a84327d134",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1270,
+                        "y": 1160
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "5086c1b0-7c61-4ac9-a0c9-7e00d028a22f",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Perfil",
+                "default": false,
+                "landmark": true,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1540,
+                        "y": 560
+                    },
+                    "size": {
+                        "height": 250,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "5f994018-03e2-4c4c-aaaf-a6249c09e45d",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Mi perfil",
+                "stereotype": "details",
+                "fields": [
+                    "apellidos",
+                    "correo electrónico",
+                    "nombre"
+                ],
+                "collection": "usuarios"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1560,
+                        "y": 590
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "a596abd3-085e-4ba5-91e5-d048e9ca3466",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Configurar notificaciones",
+                "stereotype": "form",
+                "fields": [
+                    "forma"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1560,
+                        "y": 670
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "06f39ceb-8bba-42d1-8860-9f81acd0581c",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Mis valoraciones"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1630,
+                        "y": 800
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "b759b830-d19d-4fba-a12f-ea6d0c87def6",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "valoración cancelada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1370,
+                        "y": 1050
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "e4c8ac99-7354-4b07-a76f-bc46728a560b",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1360,
+                        "y": 1050
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "604be891-5e21-453f-b38e-eccd30af5368",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Valoraciones",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1510,
+                        "y": 910
+                    },
+                    "size": {
+                        "height": 240,
+                        "width": 250
+                    }
+                }
+            },
+            "id": "c5556da8-2c4b-45b0-9fe5-e9088987c812",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "cancelar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1500,
+                        "y": 1090
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "44630dda-e52c-4947-a013-ce8249da3142",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Redactor",
+                "stereotype": "details",
+                "fields": [
+                    "correo electrónico",
+                    "nombre",
+                    "reputación"
+                ],
+                "collection": "redactores"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1560,
+                        "y": 940
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "e4f2dedd-2d06-4374-802f-cdea4e968bbf",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Valorar",
+                "stereotype": "form",
+                "fields": [
+                    "valoración"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1560,
+                        "y": 1080
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "11947f32-a2e0-45bc-ba23-952a8fa70ec0",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Reputación",
+                "stereotype": "details",
+                "fields": [
+                    "Nota"
+                ],
+                "collection": "reputacion"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1560,
+                        "y": 1010
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "84a3f616-a217-4e79-9cd6-9b4da3010282",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Valorar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1600,
+                        "y": 1130
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "8407a8c9-5043-49b0-8efc-fff7fddb9853",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "entrada traducida",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1000,
+                        "y": 440
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "8d4d8b33-49c3-412b-a4bd-815b887bb4da",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1040,
+                        "y": 480
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "c712e46b-24bd-46c6-8f70-5c92deac1cf6",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Traducir"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 1010,
+                        "y": 520
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "22f6d836-1835-482b-b380-a24cfa18d162",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Comentar la entrada",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 570,
+                        "y": 710
+                    },
+                    "size": {
+                        "height": 160,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "689419b9-5047-4c78-9299-427b76c51028",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Comentar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 700,
+                        "y": 860
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "879656f5-b87f-4c79-993e-a654d3f0d935",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Volver"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 610,
+                        "y": 860
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "32db68f5-03c4-4611-a657-1f7f550e6443",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Comentario",
+                "stereotype": "form",
+                "fields": [
+                    "comentario"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 590,
+                        "y": 750
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "d732193b-7f86-4589-a7f6-b1b668ddb080",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Entrada comentada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 690,
+                        "y": 950
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "73521823-b251-44e4-9793-8825dea05cfc",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 755,
+                        "y": 950
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "29db150e-4726-41bd-b1fa-7b0dd35eb732",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Iniciar de sesión",
+                "default": true,
+                "landmark": true,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -290,
+                        "y": 130
+                    },
+                    "size": {
+                        "height": 260,
+                        "width": 300
+                    }
+                }
+            },
+            "id": "4a7110be-071a-4d7a-aaaf-7defef09e0e4",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Iniciar sesión con Google"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 0,
+                        "y": 180
+                    },
+                    "name": {
+                        "horizontal": "middle",
+                        "vertical": "middle"
+                    }
+                }
+            },
+            "id": "870d7589-e407-420a-9462-c001b9675572",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Administrar usuarios",
+                "default": false,
+                "landmark": true,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -60,
+                        "y": -50
+                    },
+                    "size": {
+                        "height": 140,
+                        "width": 260
+                    }
+                }
+            },
+            "id": "82649a0b-f855-4045-badd-7726c76f7190",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Lista de usuarios",
+                "stereotype": "list",
+                "fields": [
+                    "email",
+                    "imagen",
+                    "nombre",
+                    "rol"
+                ],
+                "collection": "usuarios",
+                "filters": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -10,
+                        "y": 0
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "17c8ee69-690e-44e9-821c-8a805b416d05",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "selected",
+                "stereotype": "selection"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 130,
+                        "y": 50
+                    },
+                    "name": {
+                        "horizontal": "right",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "388b972f-0807-4225-b16c-0ad39d2148e4",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Notificaciones",
+                "default": false,
+                "landmark": true,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -310,
+                        "y": -60
+                    },
+                    "size": {
+                        "height": 160,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "15b3c1f7-3d3a-4146-b244-f337ffba323d",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Notificaciones pendientes",
+                "stereotype": "list",
+                "fields": [
+                    "entrada",
+                    "tipo",
+                    "usuario"
+                ],
+                "collection": "notificaciones",
+                "filters": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -290,
+                        "y": -10
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "b28b31aa-082a-409c-9f12-49efa236e30c",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "selected",
+                "stereotype": "selection"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -150,
+                        "y": 40
+                    },
+                    "name": {
+                        "horizontal": "right",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "917c1bd5-86e0-446d-8455-3a79f7765689",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Crear Wiki",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 300,
+                        "y": -160
+                    },
+                    "size": {
+                        "height": 240,
+                        "width": 290
+                    }
+                }
+            },
+            "id": "bcb65f5a-cf36-4582-ba9b-c8d0886a6273",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Crear"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 580,
+                        "y": -50
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "a140e59a-c9db-4e7c-8ed6-d91246d67c5f",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Cancelar"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 290,
+                        "y": 60
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "904dbe51-21c4-40a2-ac68-5991d6e6d58d",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Crear wiki",
+                "stereotype": "form",
+                "fields": [
+                    "descripción",
+                    "fecha",
+                    "imagen",
+                    "nombre"
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 370,
+                        "y": -80
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "40a6acec-d250-41cd-865f-c7ffdb4751f1",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "Wiki creada",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 630,
+                        "y": -70
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "34e3a90e-040a-455c-8fe7-dbafaf6330fd",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": ""
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": 670,
+                        "y": -30
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "9887b4c0-1390-4f14-b79c-e5dd95eca501",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": []
+                }
+            },
+            "id": "05362fdb-3d5e-4c08-bd97-b81fc1035940",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": []
+                }
+            },
+            "id": "07ab9826-f6d6-42d5-937d-7831a46b4a2c",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 360,
+                            "y": 850
+                        }
+                    ]
+                }
+            },
+            "id": "0a00e936-2077-4f06-808d-32c21ea01193",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 920,
+                            "y": 570
+                        }
+                    ]
+                }
+            },
+            "id": "0d7c4c53-fb3f-4b49-95f1-551aa3b43b1d",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": [
+                    {
+                        "input": "id",
+                        "output": "redactor"
+                    }
+                ]
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "10be0315-2747-48ae-9296-325c8547b222",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": [
+                    {
+                        "input": "nombre",
+                        "output": "nombre"
+                    },
+                    {
+                        "input": "descripción",
+                        "output": "descripción"
+                    },
+                    {
+                        "input": "fecha",
+                        "output": "fecha"
+                    },
+                    {
+                        "input": "html",
+                        "output": "html"
+                    },
+                    {
+                        "input": "imagen",
+                        "output": "imagen"
+                    }
+                ]
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "152a28da-d8ab-4180-801a-114017c80ae8",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "1556e8c1-f300-40b5-83af-c20c1469b410",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": [
+                    {
+                        "input": "nombre",
+                        "output": "búsqueda"
+                    }
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": []
+                }
+            },
+            "id": "2a328ce9-155e-4f17-9405-1a78f8e31c0f",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1120,
+                            "y": 780
+                        }
+                    ]
+                }
+            },
+            "id": "2d3cf238-2ea3-4b66-a3bb-a9372ce61721",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 840,
+                            "y": 610
+                        },
+                        {
+                            "x": 840,
+                            "y": 750
+                        }
+                    ]
+                }
+            },
+            "id": "31e6a8f6-0d72-4c70-8020-7070aea6817d",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": [
+                    {
+                        "input": "id",
+                        "output": "id"
+                    }
+                ]
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "3c65da9a-2a5d-440b-bc3a-1c4635c20fa1",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": []
+                }
+            },
+            "id": "43335be2-b0df-4252-b7d2-320a4b1535c7",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 620,
+                            "y": 1030
+                        },
+                        {
+                            "x": 900,
+                            "y": 1030
+                        },
+                        {
+                            "x": 900,
+                            "y": 680
+                        }
+                    ]
+                }
+            },
+            "id": "4eb613a9-ff9e-44b4-9475-438d0623d6e3",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1270,
+                            "y": 250
+                        }
+                    ]
+                }
+            },
+            "id": "4f2f913e-b537-4dc6-be6b-550bd94cdc4b",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "5e84ed37-8d31-4ae5-854c-7f4d644a279d",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "62a53e54-7bfc-4b58-b7a9-bb77a24902ef",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "65210a09-b8be-4e6e-a651-71860cdf4988",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 870,
+                            "y": 960
+                        },
+                        {
+                            "x": 870,
+                            "y": 630
+                        }
+                    ]
+                }
+            },
+            "id": "6d97a5fe-3a39-490b-a24b-a84e21c6e3c4",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": []
+                }
+            },
+            "id": "6fe958fc-e678-452e-980f-d7ff50cf25a3",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1110,
+                            "y": 1190
+                        }
+                    ]
+                }
+            },
+            "id": "713767e3-a2c9-403b-a02b-e5dc71bcf9a7",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "7664102c-56e6-4e04-ab7c-bd0505d8dae5",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 130,
+                            "y": 190
+                        }
+                    ]
+                }
+            },
+            "id": "84c4d77f-0783-461d-b0ca-9275d1bd4a2d",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1040,
+                            "y": 970
+                        }
+                    ]
+                }
+            },
+            "id": "9b9334bb-0147-4905-9915-e621b200d53e",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "9e1abac2-778e-4449-9a8c-50d790ce6c56",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 960,
+                            "y": 1160
+                        }
+                    ]
+                }
+            },
+            "id": "a67752af-f031-4fb9-bbe6-56b46a2288aa",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": []
+                }
+            },
+            "id": "ad4da4cf-815e-4a0a-84cb-5c5db3eed3d6",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 310,
+                            "y": 850
+                        },
+                        {
+                            "x": 160,
+                            "y": 850
+                        },
+                        {
+                            "x": 160,
+                            "y": 400
+                        }
+                    ]
+                }
+            },
+            "id": "b47fc2b9-4ba5-4807-9bcb-1f1c36996499",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1210,
+                            "y": 1170
+                        }
+                    ]
+                }
+            },
+            "id": "c0f731dc-f10b-4fe7-9940-e7f76142e34b",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1370,
+                            "y": 540
+                        }
+                    ]
+                }
+            },
+            "id": "c8da08fe-ff66-47f3-be0c-d799517a33bc",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1610,
+                            "y": 1180
+                        }
+                    ]
+                }
+            },
+            "id": "cf358642-bd3d-4100-9497-4cf9e7e9d7de",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": [
+                    {
+                        "input": "descripción",
+                        "output": "descripción"
+                    },
+                    {
+                        "input": "fecha",
+                        "output": "fecha"
+                    }
+                ]
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": []
+                }
+            },
+            "id": "e0f41410-e9d4-42f4-86e0-2cd62df15768",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 510,
+                            "y": 670
+                        },
+                        {
+                            "x": 590,
+                            "y": 670
+                        }
+                    ]
+                }
+            },
+            "id": "e34710e6-e563-45d3-b5a2-f18593e2a16a",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 800,
+                            "y": 390
+                        },
+                        {
+                            "x": 830,
+                            "y": 390
+                        },
+                        {
+                            "x": 830,
+                            "y": 230
+                        }
+                    ]
+                }
+            },
+            "id": "e43ef1a5-51d9-4b19-addb-c64d2f01c646",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1410,
+                            "y": 730
+                        }
+                    ]
+                }
+            },
+            "id": "e49107e8-e6ba-41c2-8781-5ff3a989f677",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "e9d0d962-2bef-4dd0-94ac-217c78fd218b",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1010,
+                            "y": 1090
+                        }
+                    ]
+                }
+            },
+            "id": "ecad9fba-76a9-406e-838a-4e2f59c9bdf9",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "f3e23723-c3a1-4bcf-9746-b3d9bdc2b5ee",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "c9f6809d-68b4-4bbb-9fa7-8a96a3618781",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "c23dbecf-34e0-4944-97d8-bbc6bff413fc",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "247f206b-69d4-4386-a2b1-345323c34ed8",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "24219369-08d6-4512-8a1a-aa7e39f0c201",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "5ad02518-932f-4c55-8c7b-658e682cdac4",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": [
+                    {
+                        "input": "fecha",
+                        "output": "Fecha creación"
+                    },
+                    {
+                        "input": "nombre",
+                        "output": "Nombre"
+                    },
+                    {
+                        "input": "usuario",
+                        "output": "Usuario"
+                    }
+                ]
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "d8429c73-d0ec-4879-a81e-59cce38d220c",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {
+                    "vertices": [
+                        {
+                            "x": 1410,
+                            "y": 900
+                        },
+                        {
+                            "x": 1090,
+                            "y": 900
+                        },
+                        {
+                            "x": 1090,
+                            "y": 710
+                        }
+                    ]
+                }
+            },
+            "id": "ae636c20-e24f-441c-b385-5a2ffe910a93",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "37a05a46-879d-4366-851c-57ffe70532d8",
+            "type": "ifml.NavigationFlow"
+        }
+    ],
+    "relations": [
+        {
+            "type": "hierarchy",
+            "parent": "0d07345b-caf5-4012-a90f-b0a84a1a0665",
+            "child": "7ad51eb5-12a5-4187-ac45-696418b6fe7b"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "0d07345b-caf5-4012-a90f-b0a84a1a0665",
+            "child": "fce39ecf-5a23-4fff-954e-54823c39870b"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "0d07345b-caf5-4012-a90f-b0a84a1a0665",
+            "child": "b6b18b05-2bb2-4b87-8089-af706821eb02"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "47f39a25-b28c-4f70-bb08-a5ed32d027f5",
+            "child": "06cee925-5589-45a9-9ebf-741888a8dec7"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "47f39a25-b28c-4f70-bb08-a5ed32d027f5",
+            "child": "componentelistabusqueda"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "b6b18b05-2bb2-4b87-8089-af706821eb02",
+            "child": "fae74bdd-a6e2-4fa5-a7bd-e46b8cb908c5"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "06cee925-5589-45a9-9ebf-741888a8dec7",
+            "child": "592b8a0e-e0b6-424c-a8a3-06be6cffdb4f"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "componentelistabusqueda",
+            "child": "62da8e90-bce0-43a2-98e3-3a1ddc1710af"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "aaac5227-3790-4214-a15a-e0de7f603f8e",
+            "child": "a9754f33-41c3-4fe7-88aa-2d138704a488"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "47f39a25-b28c-4f70-bb08-a5ed32d027f5",
+            "child": "86388822-23bb-4b67-af8b-64c4ad18f51e"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "componentelistabusqueda",
+            "child": "5412c489-5e92-49da-98ca-9145ca47cfd9"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "cda47c86-c327-4eb6-8b1b-628791d556f6",
+            "child": "16782458-55cf-4351-a57f-1c31de0a12fe"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "cda47c86-c327-4eb6-8b1b-628791d556f6",
+            "child": "a7a59a4f-7d10-45c4-b3ed-58c115a6a086"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "cda47c86-c327-4eb6-8b1b-628791d556f6",
+            "child": "88aeb218-c9b0-4d94-8e81-0cba808fc3db"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "componentelistabusqueda",
+            "child": "0021d27b-07a4-42ff-aeb2-efe3a5cbc7e5"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "99c49015-e57d-4ec1-b97b-6816d8f6ab94",
+            "child": "e9aa13f5-5f6b-4140-bfa1-71d0c8ac91d0"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "04391716-9cb6-4390-b1a9-071441d033d3",
+            "child": "ff2ee7f8-7d35-4a01-a716-1fe462b0d571"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "702526c0-ecb6-4548-aea7-2ad53f7de2df",
+            "child": "8cca6c83-d7d5-4fda-b3b9-374ec2b9263f"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "702526c0-ecb6-4548-aea7-2ad53f7de2df",
+            "child": "2d4575e6-8f7d-46a0-917a-b8cfc150340c"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "702526c0-ecb6-4548-aea7-2ad53f7de2df",
+            "child": "60d8f224-2aa2-4137-8283-a3b8e7b103d1"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "60d8f224-2aa2-4137-8283-a3b8e7b103d1",
+            "child": "fa843d4f-4dee-48e1-9400-1bd85784cb8f"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "60d8f224-2aa2-4137-8283-a3b8e7b103d1",
+            "child": "79d25a42-0d03-4e59-ab01-f582baa0d70f"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "072bb547-e45f-4762-b7ab-17e122b698ec",
+            "child": "339c06d0-a529-46bb-885b-8c0cf820a961"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "2d4575e6-8f7d-46a0-917a-b8cfc150340c",
+            "child": "4690e409-0107-4b2c-b76e-4ee617afaf27"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "702526c0-ecb6-4548-aea7-2ad53f7de2df",
+            "child": "7579433e-e603-4772-8265-31242685cd86"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "bc26bb1e-5418-4736-a4f0-76a0693c462f",
+            "child": "c11ca205-730c-4dbe-b2b3-4a21bcb77dad"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "0d07345b-caf5-4012-a90f-b0a84a1a0665",
+            "child": "8bb450a6-018e-4445-9c70-2f6978bd302e"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "44657590-89ce-475c-9cbe-f35a1e792df0",
+            "child": "dca5192c-3030-46eb-a806-978eee9fdb79"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "072bb547-e45f-4762-b7ab-17e122b698ec",
+            "child": "ebd3caab-ee60-4c69-9cfe-31a09a181cef"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "ebd3caab-ee60-4c69-9cfe-31a09a181cef",
+            "child": "af45bef7-5c97-4194-9409-d6f26a73b3d3"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "d032617e-f265-4b7e-93a2-dd06a395439c",
+            "child": "a6acd1b7-a52c-4667-94e8-af4fb96a17eb"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "8922798d-75f9-4f34-8adf-b3eacbcb4a76",
+            "child": "90310a14-422f-4e82-8c37-201d3a17e0b8"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "90310a14-422f-4e82-8c37-201d3a17e0b8",
+            "child": "1251f197-e502-48a6-9360-29c8ba786428"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "90310a14-422f-4e82-8c37-201d3a17e0b8",
+            "child": "e8c84ac2-096b-4334-9e5d-4cf5913b039c"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "9f8322d6-3dc0-4b69-ac3b-6a232da2ba34",
+            "child": "e3d4dbf7-1c9c-47d5-9630-c773da62cc07"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "25c5f7e3-6118-40e3-8eff-2a8a3c1748b5",
+            "child": "4f59ca29-4f73-47c3-b0f0-f7baf7d7fa67"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "25c5f7e3-6118-40e3-8eff-2a8a3c1748b5",
+            "child": "f5a3b047-afde-4ec9-8478-cb95fc65d031"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "4f59ca29-4f73-47c3-b0f0-f7baf7d7fa67",
+            "child": "4dfde35f-de60-44f6-a8c4-2ede826994cf"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "4f59ca29-4f73-47c3-b0f0-f7baf7d7fa67",
+            "child": "041198cf-908c-4ca4-ae92-5a313d7efab2"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "4f59ca29-4f73-47c3-b0f0-f7baf7d7fa67",
+            "child": "d065ff8f-1e77-4fb6-95ac-eacf6b9f3640"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "416c1594-8a34-433a-8126-65d6bf0fc8cf",
+            "child": "432bb4aa-9608-4af4-b213-4ede36adfd1b"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "f8e7a61b-89dc-4b02-9eab-e5a84327d134",
+            "child": "5086c1b0-7c61-4ac9-a0c9-7e00d028a22f"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "5f994018-03e2-4c4c-aaaf-a6249c09e45d",
+            "child": "a596abd3-085e-4ba5-91e5-d048e9ca3466"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "5f994018-03e2-4c4c-aaaf-a6249c09e45d",
+            "child": "06f39ceb-8bba-42d1-8860-9f81acd0581c"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "5f994018-03e2-4c4c-aaaf-a6249c09e45d",
+            "child": "b759b830-d19d-4fba-a12f-ea6d0c87def6"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "e4c8ac99-7354-4b07-a76f-bc46728a560b",
+            "child": "604be891-5e21-453f-b38e-eccd30af5368"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "c5556da8-2c4b-45b0-9fe5-e9088987c812",
+            "child": "44630dda-e52c-4947-a013-ce8249da3142"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "c5556da8-2c4b-45b0-9fe5-e9088987c812",
+            "child": "e4f2dedd-2d06-4374-802f-cdea4e968bbf"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "c5556da8-2c4b-45b0-9fe5-e9088987c812",
+            "child": "11947f32-a2e0-45bc-ba23-952a8fa70ec0"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "c5556da8-2c4b-45b0-9fe5-e9088987c812",
+            "child": "84a3f616-a217-4e79-9cd6-9b4da3010282"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "11947f32-a2e0-45bc-ba23-952a8fa70ec0",
+            "child": "8407a8c9-5043-49b0-8efc-fff7fddb9853"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "8d4d8b33-49c3-412b-a4bd-815b887bb4da",
+            "child": "c712e46b-24bd-46c6-8f70-5c92deac1cf6"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "0d07345b-caf5-4012-a90f-b0a84a1a0665",
+            "child": "22f6d836-1835-482b-b380-a24cfa18d162"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "689419b9-5047-4c78-9299-427b76c51028",
+            "child": "879656f5-b87f-4c79-993e-a654d3f0d935"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "689419b9-5047-4c78-9299-427b76c51028",
+            "child": "32db68f5-03c4-4611-a657-1f7f550e6443"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "689419b9-5047-4c78-9299-427b76c51028",
+            "child": "d732193b-7f86-4589-a7f6-b1b668ddb080"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "73521823-b251-44e4-9793-8825dea05cfc",
+            "child": "29db150e-4726-41bd-b1fa-7b0dd35eb732"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "4a7110be-071a-4d7a-aaaf-7defef09e0e4",
+            "child": "870d7589-e407-420a-9462-c001b9675572"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "82649a0b-f855-4045-badd-7726c76f7190",
+            "child": "17c8ee69-690e-44e9-821c-8a805b416d05"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "17c8ee69-690e-44e9-821c-8a805b416d05",
+            "child": "388b972f-0807-4225-b16c-0ad39d2148e4"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "15b3c1f7-3d3a-4146-b244-f337ffba323d",
+            "child": "b28b31aa-082a-409c-9f12-49efa236e30c"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "b28b31aa-082a-409c-9f12-49efa236e30c",
+            "child": "917c1bd5-86e0-446d-8455-3a79f7765689"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "bcb65f5a-cf36-4582-ba9b-c8d0886a6273",
+            "child": "a140e59a-c9db-4e7c-8ed6-d91246d67c5f"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "bcb65f5a-cf36-4582-ba9b-c8d0886a6273",
+            "child": "904dbe51-21c4-40a2-ac68-5991d6e6d58d"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "bcb65f5a-cf36-4582-ba9b-c8d0886a6273",
+            "child": "40a6acec-d250-41cd-865f-c7ffdb4751f1"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "34e3a90e-040a-455c-8fe7-dbafaf6330fd",
+            "child": "9887b4c0-1390-4f14-b79c-e5dd95eca501"
+        },
+        {
+            "type": "source",
+            "flow": "05362fdb-3d5e-4c08-bd97-b81fc1035940",
+            "source": "a140e59a-c9db-4e7c-8ed6-d91246d67c5f"
+        },
+        {
+            "type": "source",
+            "flow": "07ab9826-f6d6-42d5-937d-7831a46b4a2c",
+            "source": "a9754f33-41c3-4fe7-88aa-2d138704a488"
+        },
+        {
+            "type": "source",
+            "flow": "0a00e936-2077-4f06-808d-32c21ea01193",
+            "source": "a7a59a4f-7d10-45c4-b3ed-58c115a6a086"
+        },
+        {
+            "type": "source",
+            "flow": "0d7c4c53-fb3f-4b49-95f1-551aa3b43b1d",
+            "source": "7ad51eb5-12a5-4187-ac45-696418b6fe7b"
+        },
+        {
+            "type": "source",
+            "flow": "10be0315-2747-48ae-9296-325c8547b222",
+            "source": "041198cf-908c-4ca4-ae92-5a313d7efab2"
+        },
+        {
+            "type": "source",
+            "flow": "152a28da-d8ab-4180-801a-114017c80ae8",
+            "source": "fae74bdd-a6e2-4fa5-a7bd-e46b8cb908c5"
+        },
+        {
+            "type": "source",
+            "flow": "1556e8c1-f300-40b5-83af-c20c1469b410",
+            "source": "904dbe51-21c4-40a2-ac68-5991d6e6d58d"
+        },
+        {
+            "type": "source",
+            "flow": "2a328ce9-155e-4f17-9405-1a78f8e31c0f",
+            "source": "592b8a0e-e0b6-424c-a8a3-06be6cffdb4f"
+        },
+        {
+            "type": "source",
+            "flow": "2d3cf238-2ea3-4b66-a3bb-a9372ce61721",
+            "source": "dca5192c-3030-46eb-a806-978eee9fdb79"
+        },
+        {
+            "type": "source",
+            "flow": "31e6a8f6-0d72-4c70-8020-7070aea6817d",
+            "source": "fce39ecf-5a23-4fff-954e-54823c39870b"
+        },
+        {
+            "type": "source",
+            "flow": "3c65da9a-2a5d-440b-bc3a-1c4635c20fa1",
+            "source": "fa843d4f-4dee-48e1-9400-1bd85784cb8f"
+        },
+        {
+            "type": "source",
+            "flow": "43335be2-b0df-4252-b7d2-320a4b1535c7",
+            "source": "9887b4c0-1390-4f14-b79c-e5dd95eca501"
+        },
+        {
+            "type": "source",
+            "flow": "4eb613a9-ff9e-44b4-9475-438d0623d6e3",
+            "source": "32db68f5-03c4-4611-a657-1f7f550e6443"
+        },
+        {
+            "type": "source",
+            "flow": "4f2f913e-b537-4dc6-be6b-550bd94cdc4b",
+            "source": "1251f197-e502-48a6-9360-29c8ba786428"
+        },
+        {
+            "type": "source",
+            "flow": "5e84ed37-8d31-4ae5-854c-7f4d644a279d",
+            "source": "7579433e-e603-4772-8265-31242685cd86"
+        },
+        {
+            "type": "source",
+            "flow": "62a53e54-7bfc-4b58-b7a9-bb77a24902ef",
+            "source": "8cca6c83-d7d5-4fda-b3b9-374ec2b9263f"
+        },
+        {
+            "type": "source",
+            "flow": "65210a09-b8be-4e6e-a651-71860cdf4988",
+            "source": "af45bef7-5c97-4194-9409-d6f26a73b3d3"
+        },
+        {
+            "type": "source",
+            "flow": "6d97a5fe-3a39-490b-a24b-a84e21c6e3c4",
+            "source": "29db150e-4726-41bd-b1fa-7b0dd35eb732"
+        },
+        {
+            "type": "source",
+            "flow": "6fe958fc-e678-452e-980f-d7ff50cf25a3",
+            "source": "c11ca205-730c-4dbe-b2b3-4a21bcb77dad"
+        },
+        {
+            "type": "source",
+            "flow": "713767e3-a2c9-403b-a02b-e5dc71bcf9a7",
+            "source": "d065ff8f-1e77-4fb6-95ac-eacf6b9f3640"
+        },
+        {
+            "type": "source",
+            "flow": "7664102c-56e6-4e04-ab7c-bd0505d8dae5",
+            "source": "44630dda-e52c-4947-a013-ce8249da3142"
+        },
+        {
+            "type": "source",
+            "flow": "84c4d77f-0783-461d-b0ca-9275d1bd4a2d",
+            "source": "870d7589-e407-420a-9462-c001b9675572"
+        },
+        {
+            "type": "source",
+            "flow": "9b9334bb-0147-4905-9915-e621b200d53e",
+            "source": "8bb450a6-018e-4445-9c70-2f6978bd302e"
+        },
+        {
+            "type": "source",
+            "flow": "9e1abac2-778e-4449-9a8c-50d790ce6c56",
+            "source": "e9aa13f5-5f6b-4140-bfa1-71d0c8ac91d0"
+        },
+        {
+            "type": "source",
+            "flow": "a67752af-f031-4fb9-bbe6-56b46a2288aa",
+            "source": "432bb4aa-9608-4af4-b213-4ede36adfd1b"
+        },
+        {
+            "type": "source",
+            "flow": "ad4da4cf-815e-4a0a-84cb-5c5db3eed3d6",
+            "source": "879656f5-b87f-4c79-993e-a654d3f0d935"
+        },
+        {
+            "type": "source",
+            "flow": "b47fc2b9-4ba5-4807-9bcb-1f1c36996499",
+            "source": "16782458-55cf-4351-a57f-1c31de0a12fe"
+        },
+        {
+            "type": "source",
+            "flow": "c0f731dc-f10b-4fe7-9940-e7f76142e34b",
+            "source": "5086c1b0-7c61-4ac9-a0c9-7e00d028a22f"
+        },
+        {
+            "type": "source",
+            "flow": "c8da08fe-ff66-47f3-be0c-d799517a33bc",
+            "source": "e8c84ac2-096b-4334-9e5d-4cf5913b039c"
+        },
+        {
+            "type": "source",
+            "flow": "cf358642-bd3d-4100-9497-4cf9e7e9d7de",
+            "source": "8407a8c9-5043-49b0-8efc-fff7fddb9853"
+        },
+        {
+            "type": "source",
+            "flow": "e0f41410-e9d4-42f4-86e0-2cd62df15768",
+            "source": "5412c489-5e92-49da-98ca-9145ca47cfd9"
+        },
+        {
+            "type": "source",
+            "flow": "e34710e6-e563-45d3-b5a2-f18593e2a16a",
+            "source": "0021d27b-07a4-42ff-aeb2-efe3a5cbc7e5"
+        },
+        {
+            "type": "source",
+            "flow": "e43ef1a5-51d9-4b19-addb-c64d2f01c646",
+            "source": "62da8e90-bce0-43a2-98e3-3a1ddc1710af"
+        },
+        {
+            "type": "source",
+            "flow": "e49107e8-e6ba-41c2-8781-5ff3a989f677",
+            "source": "339c06d0-a529-46bb-885b-8c0cf820a961"
+        },
+        {
+            "type": "source",
+            "flow": "e9d0d962-2bef-4dd0-94ac-217c78fd218b",
+            "source": "604be891-5e21-453f-b38e-eccd30af5368"
+        },
+        {
+            "type": "source",
+            "flow": "ecad9fba-76a9-406e-838a-4e2f59c9bdf9",
+            "source": "f5a3b047-afde-4ec9-8478-cb95fc65d031"
+        },
+        {
+            "type": "source",
+            "flow": "f3e23723-c3a1-4bcf-9746-b3d9bdc2b5ee",
+            "source": "ff2ee7f8-7d35-4a01-a716-1fe462b0d571"
+        },
+        {
+            "type": "source",
+            "flow": "c9f6809d-68b4-4bbb-9fa7-8a96a3618781",
+            "source": "86388822-23bb-4b67-af8b-64c4ad18f51e"
+        },
+        {
+            "type": "source",
+            "flow": "c23dbecf-34e0-4944-97d8-bbc6bff413fc",
+            "source": "b759b830-d19d-4fba-a12f-ea6d0c87def6"
+        },
+        {
+            "type": "source",
+            "flow": "247f206b-69d4-4386-a2b1-345323c34ed8",
+            "source": "22f6d836-1835-482b-b380-a24cfa18d162"
+        },
+        {
+            "type": "source",
+            "flow": "24219369-08d6-4512-8a1a-aa7e39f0c201",
+            "source": "c712e46b-24bd-46c6-8f70-5c92deac1cf6"
+        },
+        {
+            "type": "source",
+            "flow": "5ad02518-932f-4c55-8c7b-658e682cdac4",
+            "source": "79d25a42-0d03-4e59-ab01-f582baa0d70f"
+        },
+        {
+            "type": "source",
+            "flow": "d8429c73-d0ec-4879-a81e-59cce38d220c",
+            "source": "4690e409-0107-4b2c-b76e-4ee617afaf27"
+        },
+        {
+            "type": "source",
+            "flow": "ae636c20-e24f-441c-b385-5a2ffe910a93",
+            "source": "a6acd1b7-a52c-4667-94e8-af4fb96a17eb"
+        },
+        {
+            "type": "source",
+            "flow": "37a05a46-879d-4366-851c-57ffe70532d8",
+            "source": "e3d4dbf7-1c9c-47d5-9630-c773da62cc07"
+        },
+        {
+            "type": "target",
+            "flow": "05362fdb-3d5e-4c08-bd97-b81fc1035940",
+            "target": "34e3a90e-040a-455c-8fe7-dbafaf6330fd"
+        },
+        {
+            "type": "target",
+            "flow": "07ab9826-f6d6-42d5-937d-7831a46b4a2c",
+            "target": "47f39a25-b28c-4f70-bb08-a5ed32d027f5"
+        },
+        {
+            "type": "target",
+            "flow": "0a00e936-2077-4f06-808d-32c21ea01193",
+            "target": "04391716-9cb6-4390-b1a9-071441d033d3"
+        },
+        {
+            "type": "target",
+            "flow": "0d7c4c53-fb3f-4b49-95f1-551aa3b43b1d",
+            "target": "702526c0-ecb6-4548-aea7-2ad53f7de2df"
+        },
+        {
+            "type": "target",
+            "flow": "10be0315-2747-48ae-9296-325c8547b222",
+            "target": "e4f2dedd-2d06-4374-802f-cdea4e968bbf"
+        },
+        {
+            "type": "target",
+            "flow": "152a28da-d8ab-4180-801a-114017c80ae8",
+            "target": "ebd3caab-ee60-4c69-9cfe-31a09a181cef"
+        },
+        {
+            "type": "target",
+            "flow": "1556e8c1-f300-40b5-83af-c20c1469b410",
+            "target": "47f39a25-b28c-4f70-bb08-a5ed32d027f5"
+        },
+        {
+            "type": "target",
+            "flow": "2a328ce9-155e-4f17-9405-1a78f8e31c0f",
+            "target": "componentelistabusqueda"
+        },
+        {
+            "type": "target",
+            "flow": "2d3cf238-2ea3-4b66-a3bb-a9372ce61721",
+            "target": "0d07345b-caf5-4012-a90f-b0a84a1a0665"
+        },
+        {
+            "type": "target",
+            "flow": "31e6a8f6-0d72-4c70-8020-7070aea6817d",
+            "target": "689419b9-5047-4c78-9299-427b76c51028"
+        },
+        {
+            "type": "target",
+            "flow": "3c65da9a-2a5d-440b-bc3a-1c4635c20fa1",
+            "target": "b6b18b05-2bb2-4b87-8089-af706821eb02"
+        },
+        {
+            "type": "target",
+            "flow": "43335be2-b0df-4252-b7d2-320a4b1535c7",
+            "target": "47f39a25-b28c-4f70-bb08-a5ed32d027f5"
+        },
+        {
+            "type": "target",
+            "flow": "4eb613a9-ff9e-44b4-9475-438d0623d6e3",
+            "target": "0d07345b-caf5-4012-a90f-b0a84a1a0665"
+        },
+        {
+            "type": "target",
+            "flow": "4f2f913e-b537-4dc6-be6b-550bd94cdc4b",
+            "target": "9f8322d6-3dc0-4b69-ac3b-6a232da2ba34"
+        },
+        {
+            "type": "target",
+            "flow": "5e84ed37-8d31-4ae5-854c-7f4d644a279d",
+            "target": "47f39a25-b28c-4f70-bb08-a5ed32d027f5"
+        },
+        {
+            "type": "target",
+            "flow": "62a53e54-7bfc-4b58-b7a9-bb77a24902ef",
+            "target": "8922798d-75f9-4f34-8adf-b3eacbcb4a76"
+        },
+        {
+            "type": "target",
+            "flow": "65210a09-b8be-4e6e-a651-71860cdf4988",
+            "target": "44657590-89ce-475c-9cbe-f35a1e792df0"
+        },
+        {
+            "type": "target",
+            "flow": "6d97a5fe-3a39-490b-a24b-a84e21c6e3c4",
+            "target": "0d07345b-caf5-4012-a90f-b0a84a1a0665"
+        },
+        {
+            "type": "target",
+            "flow": "6fe958fc-e678-452e-980f-d7ff50cf25a3",
+            "target": "702526c0-ecb6-4548-aea7-2ad53f7de2df"
+        },
+        {
+            "type": "target",
+            "flow": "713767e3-a2c9-403b-a02b-e5dc71bcf9a7",
+            "target": "416c1594-8a34-433a-8126-65d6bf0fc8cf"
+        },
+        {
+            "type": "target",
+            "flow": "7664102c-56e6-4e04-ab7c-bd0505d8dae5",
+            "target": "e4c8ac99-7354-4b07-a76f-bc46728a560b"
+        },
+        {
+            "type": "target",
+            "flow": "84c4d77f-0783-461d-b0ca-9275d1bd4a2d",
+            "target": "aaac5227-3790-4214-a15a-e0de7f603f8e"
+        },
+        {
+            "type": "target",
+            "flow": "9b9334bb-0147-4905-9915-e621b200d53e",
+            "target": "25c5f7e3-6118-40e3-8eff-2a8a3c1748b5"
+        },
+        {
+            "type": "target",
+            "flow": "9e1abac2-778e-4449-9a8c-50d790ce6c56",
+            "target": "47f39a25-b28c-4f70-bb08-a5ed32d027f5"
+        },
+        {
+            "type": "target",
+            "flow": "a67752af-f031-4fb9-bbe6-56b46a2288aa",
+            "target": "0d07345b-caf5-4012-a90f-b0a84a1a0665"
+        },
+        {
+            "type": "target",
+            "flow": "ad4da4cf-815e-4a0a-84cb-5c5db3eed3d6",
+            "target": "73521823-b251-44e4-9793-8825dea05cfc"
+        },
+        {
+            "type": "target",
+            "flow": "b47fc2b9-4ba5-4807-9bcb-1f1c36996499",
+            "target": "47f39a25-b28c-4f70-bb08-a5ed32d027f5"
+        },
+        {
+            "type": "target",
+            "flow": "c0f731dc-f10b-4fe7-9940-e7f76142e34b",
+            "target": "25c5f7e3-6118-40e3-8eff-2a8a3c1748b5"
+        },
+        {
+            "type": "target",
+            "flow": "c8da08fe-ff66-47f3-be0c-d799517a33bc",
+            "target": "0d07345b-caf5-4012-a90f-b0a84a1a0665"
+        },
+        {
+            "type": "target",
+            "flow": "cf358642-bd3d-4100-9497-4cf9e7e9d7de",
+            "target": "f8e7a61b-89dc-4b02-9eab-e5a84327d134"
+        },
+        {
+            "type": "target",
+            "flow": "e0f41410-e9d4-42f4-86e0-2cd62df15768",
+            "target": "88aeb218-c9b0-4d94-8e81-0cba808fc3db"
+        },
+        {
+            "type": "target",
+            "flow": "e34710e6-e563-45d3-b5a2-f18593e2a16a",
+            "target": "99c49015-e57d-4ec1-b97b-6816d8f6ab94"
+        },
+        {
+            "type": "target",
+            "flow": "e43ef1a5-51d9-4b19-addb-c64d2f01c646",
+            "target": "702526c0-ecb6-4548-aea7-2ad53f7de2df"
+        },
+        {
+            "type": "target",
+            "flow": "e49107e8-e6ba-41c2-8781-5ff3a989f677",
+            "target": "d032617e-f265-4b7e-93a2-dd06a395439c"
+        },
+        {
+            "type": "target",
+            "flow": "e9d0d962-2bef-4dd0-94ac-217c78fd218b",
+            "target": "25c5f7e3-6118-40e3-8eff-2a8a3c1748b5"
+        },
+        {
+            "type": "target",
+            "flow": "ecad9fba-76a9-406e-838a-4e2f59c9bdf9",
+            "target": "0d07345b-caf5-4012-a90f-b0a84a1a0665"
+        },
+        {
+            "type": "target",
+            "flow": "f3e23723-c3a1-4bcf-9746-b3d9bdc2b5ee",
+            "target": "47f39a25-b28c-4f70-bb08-a5ed32d027f5"
+        },
+        {
+            "type": "target",
+            "flow": "c9f6809d-68b4-4bbb-9fa7-8a96a3618781",
+            "target": "bcb65f5a-cf36-4582-ba9b-c8d0886a6273"
+        },
+        {
+            "type": "target",
+            "flow": "c23dbecf-34e0-4944-97d8-bbc6bff413fc",
+            "target": "c5556da8-2c4b-45b0-9fe5-e9088987c812"
+        },
+        {
+            "type": "target",
+            "flow": "247f206b-69d4-4386-a2b1-345323c34ed8",
+            "target": "8d4d8b33-49c3-412b-a4bd-815b887bb4da"
+        },
+        {
+            "type": "target",
+            "flow": "24219369-08d6-4512-8a1a-aa7e39f0c201",
+            "target": "0d07345b-caf5-4012-a90f-b0a84a1a0665"
+        },
+        {
+            "type": "target",
+            "flow": "5ad02518-932f-4c55-8c7b-658e682cdac4",
+            "target": "bc26bb1e-5418-4736-a4f0-76a0693c462f"
+        },
+        {
+            "type": "target",
+            "flow": "d8429c73-d0ec-4879-a81e-59cce38d220c",
+            "target": "60d8f224-2aa2-4137-8283-a3b8e7b103d1"
+        },
+        {
+            "type": "target",
+            "flow": "ae636c20-e24f-441c-b385-5a2ffe910a93",
+            "target": "0d07345b-caf5-4012-a90f-b0a84a1a0665"
+        },
+        {
+            "type": "target",
+            "flow": "37a05a46-879d-4366-851c-57ffe70532d8",
+            "target": "702526c0-ecb6-4548-aea7-2ad53f7de2df"
+        }
+    ],
+    "statistics": {
+        "session": {
+            "started_at": "2024-12-29T21:48:56.781Z",
+            "ended_at": "2024-12-29T22:45:44.886Z"
+        }
+    }
+}

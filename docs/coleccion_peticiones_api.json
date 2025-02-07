@@ -1,0 +1,1652 @@
+{
+	"info": {
+		"_postman_id": "b7af5186-9c59-4d15-b2ea-e69f103a1a11",
+		"name": "LaWiki API documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38845122",
+		"_collection_link": "https://lawiki-api.postman.co/workspace/LaWiki-API-Workspace~103c80e5-e11e-4b5a-84fa-9842204e7704/collection/19329901-b7af5186-9c59-4d15-b2ea-e69f103a1a11?action=share&source=collection_link&creator=38845122"
+	},
+	"item": [
+		{
+			"name": "Wikis",
+			"item": [
+				{
+					"name": "/wikis",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content type is application/json\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Validate the structure of each object in the array\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.an('array');",
+									"    responseData.forEach(function(item) {",
+									"        pm.expect(item).to.be.an('object');",
+									"        pm.expect(item).to.have.property('_id');",
+									"        pm.expect(item).to.have.property('nombre');",
+									"    });",
+									"});",
+									"",
+									"",
+									"pm.test(\"Validate _id field format\", function () {",
+									"  const responseData = pm.response.json();",
+									"  ",
+									"  pm.expect(responseData).to.be.an('array');",
+									"  responseData.forEach(function(item) {",
+									"    pm.expect(item._id).to.exist;",
+									"    pm.expect(item._id.$oid).to.be.a('string').and.to.have.lengthOf.at.least(1);",
+									"  });",
+									"});",
+									"",
+									"",
+									"pm.test(\"Ensure that the nombre field is a non-empty string\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.an('array');",
+									"    responseData.forEach(function(item) {",
+									"        pm.expect(item).to.be.an('object');",
+									"        pm.expect(item.nombre).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+									"    });",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/wikis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wikis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/wikis?nombre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type header is application/json\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Validate the structure of the response object\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.an('array');",
+									"    responseData.forEach(function(item) {",
+									"        pm.expect(item).to.be.an('object');",
+									"        pm.expect(item._id).to.exist.and.to.be.an('object');",
+									"        pm.expect(item._id.$oid).to.be.a('string');",
+									"        pm.expect(item.nombre).to.be.a('string');",
+									"    });",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify the presence and format of the _id field\", function () {",
+									"  const responseData = pm.response.json();",
+									"",
+									"  pm.expect(responseData).to.be.an('array');",
+									"  responseData.forEach(function(item) {",
+									"    pm.expect(item).to.be.an('object');",
+									"    if (item._id) {",
+									"        pm.expect(item._id.$oid).to.be.a('string');",
+									"    }",
+									"  });",
+									"});",
+									"",
+									"",
+									"pm.test(\"Nombre field should be a non-empty string\", function () {",
+									"  const responseData = pm.response.json();",
+									"  ",
+									"  pm.expect(responseData).to.be.an('array');",
+									"  responseData.forEach(function(item) {",
+									"    pm.expect(item.nombre).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Nombre should not be empty\");",
+									"  });",
+									"});",
+									"",
+									"pm.test(\"Store wiki ID\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData[0]._id.$oid).to.be.a('string');",
+									"",
+									"    pm.collectionVariables.set(\"idWiki\", responseData[0]._id.$oid);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/wikis?nombre={{nombreWiki}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wikis"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "{{nombreWiki}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/wikis/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response body has the expected fields and data types\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData._id).to.be.a('object');\r",
+									"    pm.expect(responseData._id.$oid).to.be.a('string');\r",
+									"    pm.expect(responseData.nombre).to.be.a('string');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/wikis/{{idWiki}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wikis",
+								"{{idWiki}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/wikis/<id>/entradas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has the required fields and schema\", function () {\r",
+									"  const responseData = pm.response.json();\r",
+									"  \r",
+									"  pm.expect(responseData).to.be.an('array');\r",
+									"\r",
+									"  responseData.forEach(function(item) {\r",
+									"    pm.expect(item).to.be.an('object');\r",
+									"    pm.expect(item).to.have.property('_id');\r",
+									"    pm.expect(item).to.have.property('idVersionActual');\r",
+									"    pm.expect(item).to.have.property('idWiki');\r",
+									"    pm.expect(item).to.have.property('nombre');\r",
+									"    pm.expect(item).to.have.property('slug');\r",
+									"  });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/wikis/{{idWiki}}/entradas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wikis",
+								"{{idWiki}}",
+								"entradas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/wikis",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {",
+									"  pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const randomName = \"Wiki_\" + Math.floor(Math.random() * 10000);\r",
+									"\r",
+									"pm.collectionVariables.set(\"nombreWiki\", randomName);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\" : \"{{nombreWiki}}\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/wikis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wikis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/wikis/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.expect(pm.response.to.have.status(200));",
+									"});",
+									"",
+									"",
+									"pm.test(\"Content-Type is application/json\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\" : \"{{nombreWiki}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/wikis/{{idWiki}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wikis",
+								"{{idWiki}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/wikis/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/wikis/{{idWiki}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wikis",
+								"{{idWiki}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entradas",
+			"item": [
+				{
+					"name": "/entradas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate the response schema for expected fields and data types\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"    responseData.forEach(function(entry) {\r",
+									"        pm.expect(entry).to.be.an('object');\r",
+									"        pm.expect(entry).to.have.property('_id');\r",
+									"        pm.expect(entry).to.have.property('idVersionActual');\r",
+									"        pm.expect(entry).to.have.property('idWiki');\r",
+									"        pm.expect(entry).to.have.property('nombre');\r",
+									"        pm.expect(entry).to.have.property('slug');\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/entradas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"entradas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/entradas?nombre&idWiki",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate the response schema for the required fields and data types\", function () {\r",
+									"  const responseData = pm.response.json();\r",
+									"  \r",
+									"  pm.expect(responseData).to.be.an('array');\r",
+									"\r",
+									"  responseData.forEach(function(entry) {\r",
+									"    pm.expect(entry).to.be.an('object');\r",
+									"    pm.expect(entry).to.have.property('_id');\r",
+									"    pm.expect(entry).to.have.property('idVersionActual');\r",
+									"    pm.expect(entry).to.have.property('idWiki');\r",
+									"    pm.expect(entry).to.have.property('nombre');\r",
+									"    pm.expect(entry).to.have.property('slug');\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Store entry ID\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData[0]._id.$oid).to.be.a('string');\r",
+									"\r",
+									"    pm.collectionVariables.set(\"idEntrada\", responseData[0]._id.$oid);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/entradas?nombre={{nombreEntrada}}&idWiki={{idWiki}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"entradas"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "{{nombreEntrada}}"
+								},
+								{
+									"key": "idWiki",
+									"value": "{{idWiki}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/entradas/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response schema contains required fields and data types\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData._id).to.be.a('object');\r",
+									"    pm.expect(responseData.idVersionActual).to.be.a('object');\r",
+									"    pm.expect(responseData.idWiki).to.be.a('object');\r",
+									"    pm.expect(responseData.nombre).to.be.a('string');\r",
+									"    pm.expect(responseData.slug).to.be.a('string');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/entradas/{{idEntrada}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"entradas",
+								"{{idEntrada}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/entradas/<id>/wiki",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response schema has the expected structure and data types\", function () {\r",
+									"  const responseData = pm.response.json();\r",
+									"\r",
+									"  pm.expect(responseData).to.be.an('object');\r",
+									"  pm.expect(responseData).to.have.property('_id').that.is.a('object');\r",
+									"  pm.expect(responseData).to.have.property('nombre').that.is.a('string');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idWiki\":\"672e4204f6593be76f46523b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/entradas/{{idEntrada}}/wiki",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"entradas",
+								"{{idEntrada}}",
+								"wiki"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/entradas/<id>/comentarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate the response schema for the fields\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"  \r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"\r",
+									"    responseData.forEach(function(entry) {\r",
+									"      pm.expect(entry).to.be.an('object');\r",
+									"      pm.expect(entry).to.have.property('_id');\r",
+									"      pm.expect(entry).to.have.property('idUsuarioRedactor');\r",
+									"      pm.expect(entry).to.have.property('idEntrada');\r",
+									"      pm.expect(entry).to.have.property('contenido');\r",
+									"      pm.expect(entry).to.have.property('editado');\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/entradas/{{idEntrada}}/comentarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"entradas",
+								"{{idEntrada}}",
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/entradas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const randomName = \"Entrada_\" + Math.floor(Math.random() * 10000);\r",
+									"\r",
+									"pm.collectionVariables.set(\"nombreEntrada\", randomName);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idVersionActual\":\"{{idVersion}}\",\n    \"idWiki\":\"{{idWiki}}\",\n    \"nombre\":\"{{nombreEntrada}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/entradas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"entradas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/entradas/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"{{nombreEntrada}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/entradas/{{idEntrada}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"entradas",
+								"{{idEntrada}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/entradas/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/entradas/{{idEntrada}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"entradas",
+								"{{idEntrada}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/entradas (by idWiki)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idWiki\":\"{{idWiki}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/entradas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"entradas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comentarios",
+			"item": [
+				{
+					"name": "/comentarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has the required fields\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"    responseData.forEach(function(comment) {\r",
+									"        pm.expect(comment).to.have.property('_id');\r",
+									"        pm.expect(comment).to.have.property('idUsuarioRedactor');\r",
+									"        pm.expect(comment).to.have.property('idEntrada');\r",
+									"        pm.expect(comment).to.have.property('contenido');\r",
+									"        pm.expect(comment).to.have.property('editado');\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Content-Type is application/json\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "inherit"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/comentarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/comentarios?contenido&idEntrada",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate the response schema for the fields\", function () {\r",
+									"  const responseData = pm.response.json();\r",
+									"\r",
+									"  pm.expect(responseData).to.be.an('array');\r",
+									"  responseData.forEach(function(comment) {\r",
+									"    pm.expect(comment).to.have.property('_id');\r",
+									"    pm.expect(comment).to.have.property('idUsuarioRedactor');\r",
+									"    pm.expect(comment).to.have.property('idEntrada');\r",
+									"    pm.expect(comment).to.have.property('contenido');\r",
+									"    pm.expect(comment).to.have.property('editado');\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Store comment ID\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData[0]._id.$oid).to.be.a('string');\r",
+									"\r",
+									"    pm.collectionVariables.set(\"idComentario\", responseData[0]._id.$oid);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/comentarios?contenido={{contenidoComentario}}&idEntrada={{idEntrada}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"comentarios"
+							],
+							"query": [
+								{
+									"key": "contenido",
+									"value": "{{contenidoComentario}}"
+								},
+								{
+									"key": "idEntrada",
+									"value": "{{idEntrada}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/comentarios",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const randomName = \"Comentario_\" + Math.floor(Math.random() * 10000);\r",
+									"\r",
+									"pm.collectionVariables.set(\"contenidoComentario\", randomName);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUsuarioRedactor\":\"672e4204f6593be76f46523b\",\r\n    \"idEntrada\":\"{{idEntrada}}\",\r\n    \"contenido\":\"{{contenidoComentario}}\",\r\n    \"editado\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/comentarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/comentarios/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contenido\":\"{{contenidoComentario}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/comentarios/{{idComentario}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"comentarios",
+								"{{idComentario}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/comentarios/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/comentarios/{{idComentario}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"comentarios",
+								"{{idComentario}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/comentarios (by idEntrada)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEntrada\":\"{{idEntrada}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/comentarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Versiones",
+			"item": [
+				{
+					"name": "/versiones",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has the required fields\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"    responseData.forEach(function(version) {\r",
+									"        pm.expect(version).to.have.property('_id');\r",
+									"        pm.expect(version).to.have.property('idUsuario');\r",
+									"        pm.expect(version).to.have.property('idEntrada');\r",
+									"        pm.expect(version).to.have.property('contenido');\r",
+									"        pm.expect(version).to.have.property('fechaEdicion');\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Content-Type is application/json\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/versiones/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"versiones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/versiones?contenido&idEntrada",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate the response schema for the required fields and data types\", function () {\r",
+									"  const responseData = pm.response.json();\r",
+									"  \r",
+									"  pm.expect(responseData).to.be.an('array');\r",
+									"\r",
+									"  responseData.forEach(function(version) {\r",
+									"    pm.expect(version).to.be.an('object');\r",
+									"    pm.expect(version).to.have.property('_id');\r",
+									"    pm.expect(version).to.have.property('idUsuario');\r",
+									"    pm.expect(version).to.have.property('idEntrada');\r",
+									"    pm.expect(version).to.have.property('contenido');\r",
+									"    pm.expect(version).to.have.property('fechaEdicion');\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Store entry ID\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData[0]._id.$oid).to.be.a('string');\r",
+									"\r",
+									"    pm.collectionVariables.set(\"idVersion\", responseData[0]._id.$oid);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/versiones?contenido={{contenidoVersion}}&idEntrada={{idEntrada}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"versiones"
+							],
+							"query": [
+								{
+									"key": "contenido",
+									"value": "{{contenidoVersion}}"
+								},
+								{
+									"key": "idEntrada",
+									"value": "{{idEntrada}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/versiones/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate the response schema\", function () {\r",
+									"  const responseData = pm.response.json();\r",
+									"  \r",
+									"  pm.expect(responseData).to.be.an('object');\r",
+									"  pm.expect(responseData._id).to.exist.and.to.be.a('object');\r",
+									"  pm.expect(responseData.idUsuario).to.exist.and.to.be.a('object');\r",
+									"  pm.expect(responseData.idEntrada).to.exist.and.to.be.a('object');\r",
+									"  pm.expect(responseData.contenido).to.exist.and.to.be.a('string');\r",
+									"  pm.expect(responseData.fechaEdicion).to.exist;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/versiones/{{idVersion}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"versiones",
+								"{{idVersion}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/versiones",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 201\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const randomName = \"Entrada_\" + Math.floor(Math.random() * 10000);\r",
+									"\r",
+									"pm.collectionVariables.set(\"contenidoVersion\", randomName);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idUsuario\":\"672f85173a682aa8fb971f85\",\n    \"idEntrada\":\"{{idEntrada}}\",\n    \"contenido\":\"{{contenidoVersion}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/versiones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"versiones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/versiones/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contenido\":\"{{contenidoVersion}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/versiones/{{idVersion}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"versiones",
+								"{{idVersion}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/versiones/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/versiones/{{idVersion}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"versiones",
+								"{{idVersion}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/versiones (by idEntrada)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEntrada\":\"{{idEntrada}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/versiones/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"versiones",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "idWiki",
+			"value": "672f505ea65deeaa49535d02",
+			"type": "string"
+		},
+		{
+			"key": "nombreWiki",
+			"value": "ingenieriaWeb",
+			"type": "string"
+		},
+		{
+			"key": "idEntrada",
+			"value": "672e35ec419af1405bdc5d56",
+			"type": "string"
+		},
+		{
+			"key": "nombreEntrada",
+			"value": "entrada",
+			"type": "string"
+		},
+		{
+			"key": "idComentario",
+			"value": "6721395b45e0280f999d398b",
+			"type": "string"
+		},
+		{
+			"key": "contenidoComentario",
+			"value": "content",
+			"type": "string"
+		},
+		{
+			"key": "idVersion",
+			"value": "672f4954646eeb7d0e55ef45",
+			"type": "string"
+		},
+		{
+			"key": "contenidoVersion",
+			"value": "entrada",
+			"type": "string"
+		},
+		{
+			"key": "idValoracion",
+			"value": "672f49d7646eeb7d0e55ef4a",
+			"type": "string"
+		},
+		{
+			"key": "notaValoracion",
+			"value": "5",
+			"type": "string"
+		}
+	]
+}
